@@ -1,19 +1,16 @@
 /*
 //////////////////////////////////////
-//          "Homework 1"           //
+//          "Homework 2"           //
 //    by: Shorakhim Shomansurov   //
 ///////////////////////////////////
 */
 
+let a = 0;
+let d = 0; 
+xLocation = 0;
 
 function setup() {
   createCanvas(1280, 725);
-}
-
-let carX = 800;
-let carSpeed = 5;
-
-function draw() {
   background(173, 216, 230);
 
   //sun
@@ -60,24 +57,26 @@ function draw() {
   //tree leaves
   fill(0, 255, 0);
   circle(225, 350, 150);  
+}
 
+function draw() {
   //car 
   fill(255, 0, 0);
-  rect(carX, 500, 200, 100);
-  rect(carX + 50, 450, 100, 50);
+  rect(800 + xLocation, 500, 200, 100);
+  rect(850 + xLocation, 450, 100, 50);
 
   //car wheels
   fill(0);
-  circle(carX + 25, 600, 50);  
-  circle(carX + 175, 600, 50); 
+  circle(825 + xLocation, 600, 50);  
+  circle(975 + xLocation, 600, 50); 
+}
 
-  // Movement controls: A/D or Left/Right arrows
-  if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
-    carX -= carSpeed;
+function keyPressed()
+{
+  if (key === 'a' || key === 'A') {
+    xLocation -= 20;
   }
-  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
-    carX += carSpeed;
+  if (key === 'd' || key === 'D') {
+    xLocation += 20;
   }
-
-  carX = constrain(carX, -50, width - 150);
 }

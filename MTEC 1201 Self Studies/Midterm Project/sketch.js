@@ -1,5 +1,5 @@
 ///////////////////////////////
-///       Circle Clicker    ///
+///       Dot Clicker       ///
 ///  Shorakhim Shomansurov  ///
 ///////////////////////////////
 
